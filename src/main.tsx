@@ -1,7 +1,8 @@
-import Root from './routes/root.tsx'
+import Root from './routes/home.tsx'
 import React from 'react';
 import ErrorPage from "./error-page";
 import ReactDOM from 'react-dom/client'
+import MovieList from "./routes/movieList.tsx"
 import {
   createBrowserRouter,
   RouterProvider,
@@ -10,10 +11,14 @@ import {
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <Root />,
-    errorElement: <ErrorPage />,
+    path: "/home",
+    element: <Root/>,
+    errorElement: <ErrorPage/>,
   },
+      {
+        path: "/movies",
+        element: <MovieList />,
+      }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
